@@ -1,0 +1,33 @@
+{
+  "name": "@ivanherula/google-chat-mcp",
+  "version": "1.0.0",
+  "description": "MCP server for Google Chat – list spaces, read/send messages, search",
+  "keywords": ["mcp", "google-chat", "model-context-protocol", "claude"],
+  "author": "ivanherula",
+  "license": "MIT",
+  "type": "module",
+  "bin": { "google-chat-mcp": "./build/index.js" },
+  "files": ["build/**/*.js", "README.md", "LICENSE"],
+  "scripts": {
+    "build": "tsc && chmod 755 build/index.js",
+    "dev": "tsc --watch",
+    "start": "node build/index.js",
+    "prepublishOnly": "npm run build"
+  },
+  "publishConfig": { "access": "public" },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ivanherula/google-chat-mcp-server.git"
+  },
+  "engines": { "node": ">=18.0.0" },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.27.1",
+    "googleapis": "^171.4.0",
+    "open": "^10.1.0",
+    "zod": "^3.25.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.4.0"
+  }
+}
